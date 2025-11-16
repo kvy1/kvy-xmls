@@ -1,0 +1,15 @@
+<patches>
+    <patch file="skill3_contextscriptdata_kungfufighter_contextsimplemode_g3.xml">
+        <!-- Remove Human + Wolf -->
+        <select-nodes query="//stance[@stance='단타']">
+            <remove-children />
+        </select-nodes>
+
+        <!-- Append Human Form -->
+        <select-nodes query="//stance[@stance='단타']">
+            <append-buffer>
+                <!-- #include file="Wolf\Human.xml" -->
+            </append-buffer>
+        </select-nodes>
+    </patch>
+</patches>

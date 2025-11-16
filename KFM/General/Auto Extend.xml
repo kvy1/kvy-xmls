@@ -1,0 +1,26 @@
+<placeholder>
+    <layer>
+        <decision>
+            <condition skill="111490" />
+            <condition hk="off-cd" skill="111490" />
+            <condition hk="skill-time" skill="111730" time="left" time-op="le" time-value="54" />
+            <result control-mode="bns" special-2="111490" key-status="unpress" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="112490" />
+            <condition hk="off-cd" skill="112490" />
+            <condition hk="skill-time" skill="111730" time="left" time-op="le" time-value="54" />
+            <result control-mode="bns" special-2="112490" key-status="unpress" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="113540" />
+            <condition hk="off-cd" skill="113540" />
+            <condition hk="skill-time" skill="111730" time="left" time-op="le" time-value="54" />
+            <result control-mode="bns" special-2="113540" key-status="unpress" />
+        </decision>
+    </layer>
+</placeholder>
