@@ -2,6 +2,7 @@
 
     <!--
     Pretty much a complete wolf overhaul
+    ( Grab changes are handled in a separate XML )
     Human Form
         - Titan Stance on V
         - Grab moved to X
@@ -18,22 +19,14 @@
         <!-- Remove Human + Wolf -->
         <select-nodes query="//stance[@stance='단타']">
             <remove-children />
-        </select-nodes>
-
-        <!-- Remove Titan Stance -->
-        <select-nodes query="//stance[@stance='연계']">
-            <remove-children/>
-        </select-nodes>
-
-        <!-- Append Human Form -->
-        <select-nodes query="//stance[@stance='단타']">
             <append-buffer>
                 <!-- #include file="Wolf\단타.xml" -->
             </append-buffer>
         </select-nodes>
 
-        <!-- Append Titan Stance -->
+        <!-- Remove Titan Stance -->
         <select-nodes query="//stance[@stance='연계']">
+            <remove-children/>
             <append-buffer>
                 <!-- #include file="Wolf\연계.xml" -->
             </append-buffer>
