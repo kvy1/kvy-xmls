@@ -1,0 +1,26 @@
+<patches>
+    <!--
+    Kiwi's Complete Overhaul
+    Melee Stance
+        - Full rotation on T/G
+            - Only uses Focus Chi and other specific skills if target is a boss (Can be used manually if you need for adds)
+        - Block on 1 and LMB
+        - Heal on V
+        - Resurrect on B
+        - Grab on X
+        - Release grab on 1
+        - B Ult Moved to F
+
+    Ranged Stance
+        - Change back to melee on heal or resurrect
+        - Gap close on 2 replaces air
+    -->
+    <patch file="skill3_contextscriptdata_soulfighter_g2_contextsimplemode.xml">
+        <select-nodes query="//stance[@stance='유권']">
+            <remove-children />
+            <append-buffer>
+                <!-- #include file="Ice\Melee.xml" -->
+            </append-buffer>
+        </select-nodes>
+    </patch>
+</patches>
