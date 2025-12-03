@@ -1,0 +1,68 @@
+﻿<patches>
+    <patch file="skill3_contextscriptdata_kungfufighter_*.xml">
+        <!-- Remove Ultimates -->
+        <select-nodes query="result[@*[(.='111430') or (.='111440')]]/..">
+            <remove-children />
+        </select-nodes>
+
+        <!-- Auto Extend -->
+        <select-nodes query="//stance[@link='mount']">
+            <remove-children />
+            <append-buffer>
+<![CDATA[
+<layer>
+        <decision>
+            <condition skill="111490" />
+            <condition hk="off-cd" skill="111490" />
+            <condition hk="skill-time" skill="111730" time="left" time-op="le" time-value="54" />
+            <result control-mode="bns" special-2="111490" key-status="unpress" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="112490" />
+            <condition hk="off-cd" skill="112490" />
+            <condition hk="skill-time" skill="111730" time="left" time-op="le" time-value="54" />
+            <result control-mode="bns" special-2="112490" key-status="unpress" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="113540" />
+            <condition hk="off-cd" skill="113540" />
+            <condition hk="skill-time" skill="111730" time="left" time-op="le" time-value="54" />
+            <result control-mode="bns" special-2="113540" key-status="unpress" />
+        </decision>
+    </layer>
+]]>
+            </append-buffer>
+        </select-nodes>
+
+        <!-- PVP Grab - If you need this, you shouldn't be using xmlx in pvp :| -->
+        <select-nodes query="result[@*[(.='111450') or (.='112450')]]/..">
+            <remove-children />
+        </select-nodes>
+
+        <!-- Smite -->
+
+        <!--Smite-->
+        <select-nodes query="result[@*[(.='111030') or (.='112030')]]/..">
+            <remove-children />
+        </select-nodes>
+
+        <!--Open Palm-->
+        <select-nodes query="result[@*[(.='111540') or (.='112520')]]/..">
+            <remove-children />
+        </select-nodes>
+
+        <!-- Sky Kick -->
+        <select-nodes query="result[@*[(.='111270') or (.='112270') or (.='113350')]]/..">
+            <remove-children />
+        </select-nodes>
+
+        <!-- Flying Slam -->
+        <select-nodes query="result[@*[(.='111020')]]/..">
+            <remove-children />
+        </select-nodes>
+    </patch>
+</patches>

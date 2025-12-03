@@ -1,0 +1,17 @@
+﻿<patches>
+    <patch file="skill3_contextscriptdata*.xml">
+        <!-- Remove B Ultimate -->
+        <select-nodes query="//condition[@skill[(.='170390')]]/following-sibling::result[@*[(.='170390')]]/..">
+            <remove-children />
+        </select-nodes>
+
+        <!-- Change keybind to B -->
+        <select-nodes query="//layer/decision/result/@skillbar-2[
+            (.=171570)
+            or (.=171570)
+            or (.=173720)
+        ]">
+            <set-name name="special-2" />
+        </select-nodes>
+    </patch>
+</patches>
