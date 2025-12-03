@@ -1,0 +1,22 @@
+<placeholder>
+    <layer>
+        <decision>
+            <result control-mode="bns"
+                    skillbar-1="113310"
+                    skillbar-2="113400"
+                    skillbar-3="113320"
+                    skillbar-4="113040"
+                    skillbar-5="113650"
+                    skillbar-6="113651"
+                    skillbar-7="113652"
+                    skillbar-8="113640"
+                    context-1="113310"
+                    context-2="113221"
+                    cmd-key-left="113410"
+                    cmd-key-right="113420"
+                    cmd-key-down="113490"
+                    stance="113260"
+            />
+        </decision>
+    </layer>
+</placeholder>

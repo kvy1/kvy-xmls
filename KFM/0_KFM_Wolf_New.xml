@@ -1,14 +1,41 @@
 <patches>
+
+    <!--
+    Pretty much a complete wolf overhaul
+    Human Form
+        - Titan Stance on V
+        - Grab moved to X
+        - Full rotation on T/G
+        - Block copied to LMB
+    Wolf
+        - Break only available on open breaker bar
+        - Break copied to X
+        -
+    -->
+
+
     <patch file="skill3_contextscriptdata_kungfufighter_contextsimplemode_g3.xml">
         <!-- Remove Human + Wolf -->
         <select-nodes query="//stance[@stance='단타']">
             <remove-children />
         </select-nodes>
 
+        <!-- Remove Titan Stance -->
+        <select-nodes query="//stance[@stance='연계']">
+            <remove-children/>
+        </select-nodes>
+
         <!-- Append Human Form -->
         <select-nodes query="//stance[@stance='단타']">
             <append-buffer>
-                <!-- #include file="Wolf\Human.xml" -->
+                <!-- #include file="Wolf\단타.xml" -->
+            </append-buffer>
+        </select-nodes>
+
+        <!-- Append Titan Stance -->
+        <select-nodes query="//stance[@stance='연계']">
+            <append-buffer>
+                <!-- #include file="Wolf\연계.xml" -->
             </append-buffer>
         </select-nodes>
     </patch>

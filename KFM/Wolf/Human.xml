@@ -1,8 +1,0 @@
-<placeholder>
-    <layer>
-        <decision>
-            <condition skill="123321" />
-            <result control-mode="bns" context-1="123321" />
-        </decision>
-    </layer>
-</placeholder>
