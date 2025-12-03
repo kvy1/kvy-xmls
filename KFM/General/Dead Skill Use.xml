@@ -1,0 +1,9 @@
+<placeholder>
+    <layer>
+        <decision>
+            <condition hk="prop-flag" name="combat-mode" op="neq" value="1" />
+            <result control-mode="bns" context-2="501" />
+            <result control-mode="bns" special-1="501" />
+        </decision>
+    </layer>
+</placeholder>

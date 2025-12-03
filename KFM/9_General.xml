@@ -4,6 +4,13 @@
         <select-nodes query="result[@*[(.='111430') or (.='111440')]]/..">
             <remove-children />
         </select-nodes>
+        
+        <!-- Prevent Dead Boss Skills -->
+        <select-nodes query="//stance">
+            <append-buffer>
+                <!-- #include file="General\Dead Skill Use.xml" -->
+            </append-buffer>
+        </select-nodes>
 
         <!-- Auto Extend -->
         <select-nodes query="//stance[@link='mount']">

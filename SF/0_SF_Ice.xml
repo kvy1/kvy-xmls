@@ -1,6 +1,8 @@
 <patches>
     <!--
     Kiwi's Complete Overhaul
+    https://github.com/kvy1/kvy-xmls
+
     Melee Stance
         - Full rotation on T/G
             - Only uses Focus Chi and other specific skills if target is a boss (Can be used manually if you need for adds)
