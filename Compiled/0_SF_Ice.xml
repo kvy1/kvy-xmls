@@ -1,0 +1,168 @@
+﻿<patches>
+    <!--
+    Kiwi's Complete Overhaul
+    Melee Stance
+        - Full rotation on T/G
+            - Only uses Focus Chi and other specific skills if target is a boss (Can be used manually if you need for adds)
+        - Block on 1 and LMB
+        - Heal on V
+        - Resurrect on B
+        - Grab on X
+        - Release grab on 1
+        - B Ult Moved to F
+
+    Ranged Stance
+        - Change back to melee on heal or resurrect
+        - Gap close on 2 replaces air
+    -->
+    <patch file="skill3_contextscriptdata_soulfighter_g2_contextsimplemode.xml">
+        <select-nodes query="//stance[@stance='유권']">
+            <remove-children />
+            <append-buffer>
+<![CDATA[
+<!-- Anima -->
+    <layer>
+        <decision>
+            <condition hk="on-cd" skill="182130" />
+            <condition skill="182550" />
+            <result control-mode="bns" special-1="182550" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="on-cd" skill="182130" />
+            <condition skill="182530" />
+            <result control-mode="bns" special-1="182530" />
+            <result control-mode="bns" context-2="182530" />
+        </decision>
+    </layer>
+
+    <!-- Ice Helix -->
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="4" />
+            <condition hk="skill-time" skill="182130" time="elapsed" time-op="lt" time-value="1" />
+            <condition skill="182400" />
+            <result control-mode="bns" context-2="182400" />
+            <result control-mode="bns" special-1="182400" />
+        </decision>
+    </layer>
+
+    <!-- Frost Storm -->
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="4" />
+            <condition skill="182120" />
+            <result control-mode="bns" special-1="182120" />
+        </decision>
+    </layer>
+
+    <!-- Howling Blast if Focus Chi available -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="182130" />
+            <condition hk="off-cd" skill="181050" />
+            <condition skill="181050" />
+            <result control-mode="bns" context-2="181050" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="182130" />
+            <result control-mode="bns" context-2="182130" />
+        </decision>
+    </layer>
+
+    <!-- DF -->
+    <layer>
+        <decision>
+            <condition skill="181444" />
+        </decision>
+        <decision>
+            <condition skill="181443" />
+            <result context-2="181441" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181442" />
+            <result context-2="181440" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181441" />
+            <result context-2="181441" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181440" />
+            <result context-2="181440" context-ui-effect="event" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="181089" />
+        </decision>
+        <decision>
+            <condition skill="181088" />
+            <result context-2="181086" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181087" />
+            <result context-2="181085" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181086" />
+            <result context-2="181086" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181085" />
+            <result context-2="181085" context-ui-effect="event" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="181084" />
+        </decision>
+        <decision>
+            <condition skill="181083" />
+            <result context-2="181081" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181082" />
+            <result context-2="181080" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181081" />
+            <result context-2="181081" context-ui-effect="event" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="181080" />
+            <result context-2="181080" context-ui-effect="event" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <!-- B Ultimate to F -->
+
+    <layer>
+        <decision>
+            <result control-mode="bns"
+                    skillbar-1="182060"
+                    skillbar-2="182090"
+                    skillbar-3="181110"
+                    skillbar-4="182100"
+                    skillbar-5="182130"
+                    skillbar-6="182581"
+                    skillbar-7="182360"
+                    skillbar-8="182150"
+                    context-1="182060"
+                    context-2="501"
+                    context-3="501"
+                    cmd-key-left="181230"
+                    cmd-key-right="181250"
+                    cmd-key-down="181270"
+                    stance="181160"
+            />
+        </decision>
+    </layer>
+]]>
+            </append-buffer>
+        </select-nodes>
+    </patch>
+</patches>

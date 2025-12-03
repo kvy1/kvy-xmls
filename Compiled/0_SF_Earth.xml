@@ -1,0 +1,29 @@
+﻿<patches>
+    <!--
+    Kiwi's Complete Overhaul
+    https://github.com/kvy1/kvy-xmls
+
+    Melee Stance
+        - Full rotation on T/G
+            - Only uses Focus Chi and other specific skills if target is a boss (Can be used manually if you need for adds)
+        - Block on 1 and LMB
+        - Heal on X
+        - Resurrect on B
+        - Warcry on block V
+        - B Ult Moved to F
+
+    Ranged Stance
+        - Change back to melee on heal or resurrect
+        - Gap close on 2 replaces air
+
+    ~ Things to remember ~
+    - Beam torrent useless? Ignore this skill?
+    -->
+    <patch file="skill3_contextscriptdata_soulfighter_g1_contextsimplemode.xml">
+        <select-nodes query="//stance[@stance='유권']">
+            <remove-children/>
+            <append-buffer><!-- Include file not found: C:\Users\alexb\Documents\BnS\XML Parts\SF\Earth\Melee.xml -->
+            </append-buffer>
+        </select-nodes>
+    </patch>
+</patches>
