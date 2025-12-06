@@ -1,176 +1,32 @@
 <placeholder>
     <!-- #include file="Titan\Finishers.xml" -->
 
-    <!-- Gap close above 6m -->
-    <layer>
-        <decision>
-            <condition hk="special" name="is-boss" target="y" />
-            <condition hk="distance" op="ge" range="6" />
-            <condition hk="off-cd" skill="113400" />
-            <result control-mode="bns" context-2="113400" />
-        </decision>
-    </layer>
-    
-    <!-- V4XVVV Rotation -->
-    <layer>
-        <decision>
-            <condition hk="off-cd" skill="113055" />
-            <condition skill="113055" />
-            <result control-mode="bns" context-2="113055" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition hk="off-cd" skill="113040" />
-            <condition skill="113040" />
-            <result control-mode="bns" special-1="113040" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition hk="off-cd" skill="113050" />
-            <condition skill="113050" />
-            <result control-mode="bns" special-1="113050" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition hk="on-cd" skill="113040" />
-            <condition skill="113063" />
-            <result control-mode="bns" context-2="113063" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113064" />
-            <result control-mode="bns" context-2="113064" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113065" />
-            <result control-mode="bns" context-2="113065" />
-        </decision>
-    </layer>
+    <!-- #include file="Human.xml" -->
+    <!-- #include file="Wolf.xml" -->
 
-    <!-- Normal RMB Rotation -->
+    <!-- Wolf Base -->
     <layer>
         <decision>
-            <condition skill="113720" skip-condition-move-check="y" skip-condition-target-check="y" />
-            <result control-mode="bns" context-2="113720" />
+            <condition hk="soul-mask" value="8" />
+            <result control-mode="bns"
+                    skillbar-1="113100"
+                    skillbar-2="113090"
+                    skillbar-3="113130"
+                    skillbar-4="113120"
+                    skillbar-5="113290"
+                    skillbar-6="501"
+                    skillbar-7="113156"
+                    skillbar-8="113800"
+                    context-1="113310"
+                    context-2="501"
+                    cmd-key-left="113110"
+                    cmd-key-right="113115"
+                    cmd-key-down="113170"
+                    stance="113260"
+            />
         </decision>
     </layer>
-    <layer>
-        <decision>
-            <condition skill="113020" skip-condition-move-check="y" skip-condition-target-check="y" />
-            <result control-mode="bns" context-2="113020" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113000" />
-            <result control-mode="bns" context-2="113000" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113001" />
-            <result control-mode="bns" context-2="113001" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113010" />
-            <result control-mode="bns" context-2="113010" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113011" />
-            <result control-mode="bns" context-2="113011" />
-        </decision>
-    </layer>
-
-    <!-- Scuffed Q/E -->
-    <layer>
-        <decision>
-            <condition hk="off-cd" skill="111350" />
-            <condition hk="distance" op="le" range="3" />
-            <result cmd-key-left="111351" control-mode="bns" />
-        </decision>
-        <decision>
-            <condition hk="off-cd" skill="111350" />
-            <result cmd-key-left="111350" control-mode="bns" />
-        </decision>
-        <decision>
-            <condition hk="off-cd" skill="111340" />
-            <condition hk="distance" op="le" range="3" />
-            <result cmd-key-left="111341" control-mode="bns" />
-        </decision>
-        <decision>
-            <condition hk="off-cd" skill="111340" />
-            <result cmd-key-left="111340" control-mode="bns" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition hk="off-cd" skill="111410" />
-            <result cmd-key-right="111410" control-mode="bns" />
-        </decision>
-    </layer>
-
-    <layer>
-        <decision>
-            <condition skill="113260" />
-            <condition skill="113650" not="y" />
-            <result control-mode="bns" skillbar-8="113260" />
-        </decision>
-    </layer>
-    
-    <!-- If wolf available put this on tab -->
-    <layer>
-        <decision>
-            <condition skill="113640" />
-            <condition hk="off-cd" skill="113640" />
-            <result control-mode="bns" stance="113640" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113641" />
-            <condition hk="off-cd" skill="113641" />
-            <result control-mode="bns" stance="113641" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113642" />
-            <condition hk="off-cd" skill="113642" />
-            <result control-mode="bns" stance="113642" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113650" />
-            <condition hk="off-cd" skill="113650" />
-            <result control-mode="bns" stance="113650" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113651" />
-            <condition hk="off-cd" skill="113651" />
-            <result control-mode="bns" stance="113651" />
-        </decision>
-    </layer>
-    <layer>
-        <decision>
-            <condition skill="113652" />
-            <condition hk="off-cd" skill="113652" />
-            <result control-mode="bns" stance="113652" />
-        </decision>
-    </layer>
-
+    <!-- Human Base -->
     <layer>
         <decision>
             <result control-mode="bns"
@@ -183,7 +39,7 @@
                 skillbar-7="113470"
                 skillbar-8="113640"
                 context-1="113310"
-                context-2="113221"
+                context-2="501"
                 cmd-key-left="113410"
                 cmd-key-right="113420"
                 cmd-key-down="113490"

@@ -1,33 +1,12 @@
 <placeholder>
-    <!-- Metal Finishers-->
-    <!--Yellow Metal Finisher -->
-    <layer>
-        <decision>
-            <condition skill="113200" />
-            <result control-mode="bns" context-2="113200" />
-        </decision>
-    </layer>
-    <!-- Red Metal Finisher -->
-    <layer>
-        <decision>
-            <condition skill="113610" />
-            <result control-mode="bns" context-2="113610" />
-        </decision>
-    </layer>
-    <!-- Blue Metal Finisher -->
-    <layer>
-        <decision>
-            <condition skill="113615" />
-            <result control-mode="bns" context-2="113615" />
-        </decision>
-    </layer>
-
     <!-- Surge Finishers -->
     <!-- Yellow Surge Finisher -->
     <layer>
         <decision>
             <condition skill="113210" />
             <result control-mode="bns" context-2="113210" />
+            <result control-mode="bns" special-1="113210" />
+            <result control-mode="bns" context-1="113210" />
         </decision>
     </layer>
     <!-- Red Surge Finisher -->
@@ -35,6 +14,8 @@
         <decision>
             <condition skill="113670" />
             <result control-mode="bns" context-2="113670" />
+            <result control-mode="bns" special-1="113670" />
+            <result control-mode="bns" context-1="113670" />
         </decision>
     </layer>
     <!-- Blue Surge Finisher -->
@@ -42,6 +23,37 @@
         <decision>
             <condition skill="113675" />
             <result control-mode="bns" context-2="113675" />
+            <result control-mode="bns" special-1="113675" />
+            <result control-mode="bns" context-1="113675" />
+        </decision>
+    </layer>
+
+    <!-- Metal Finishers -->
+    <!--Yellow Metal Finisher -->
+    <layer>
+        <decision>
+            <condition skill="113200" />
+            <result control-mode="bns" context-2="113200" />
+            <result control-mode="bns" special-1="113200" />
+            <result control-mode="bns" skillbar-7="113200" />
+        </decision>
+    </layer>
+    <!-- Red Metal Finisher -->
+    <layer>
+        <decision>
+            <condition skill="113610" />
+            <result control-mode="bns" context-2="113610" />
+            <result control-mode="bns" special-1="113610" />
+            <result control-mode="bns" skillbar-7="113610" />
+        </decision>
+    </layer>
+    <!-- Blue Metal Finisher -->
+    <layer>
+        <decision>
+            <condition skill="113615" />
+            <result control-mode="bns" context-2="113615" />
+            <result control-mode="bns" special-1="113615" />
+            <result control-mode="bns" skillbar-7="113615" />
         </decision>
     </layer>
 </placeholder>

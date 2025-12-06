@@ -1,3 +1,217 @@
 <placeholder>
+    <!-- RMB - Mixed rotation -->
 
+    <!-- Red - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113671" />
+            <result control-mode="bns" context-2="113671" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113611" />
+            <result control-mode="bns" context-2="113611" />
+        </decision>
+    </layer>
+
+    <!-- Blue - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113681" />
+            <result control-mode="bns" context-2="113681" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113621" />
+            <result control-mode="bns" context-2="113621" />
+        </decision>
+    </layer>
+
+    <!-- Yellow - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-1" time="left" time-op="le" time-value="83" />
+            <condition skill="113212" />
+            <result control-mode="bns" context-2="113212" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-1" time="left" time-op="le" time-value="83" />
+            <condition skill="113202" />
+            <result control-mode="bns" context-2="113202" />
+        </decision>
+    </layer>
+
+    <!-- Red - Lvl 2 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113671" />
+            <result control-mode="bns" context-2="113671" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113611" />
+            <result control-mode="bns" context-2="113611" />
+        </decision>
+    </layer>
+
+    <!-- Blue - Lvl 2 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113681" />
+            <result control-mode="bns" context-2="113681" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113621" />
+            <result control-mode="bns" context-2="113621" />
+        </decision>
+    </layer>
+
+    <!-- Else Yellow -->
+    <layer>
+        <decision>
+            <condition skill="113212" />
+            <result control-mode="bns" context-2="113212" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="113202" />
+            <result control-mode="bns" context-2="113202" />
+        </decision>
+    </layer>
+
+    <!-- LMB -->
+    <!-- Red - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113671" />
+            <result control-mode="bns" context-1="113671" />
+        </decision>
+    </layer>
+
+    <!-- Blue - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113681" />
+            <result control-mode="bns" context-1="113681" />
+        </decision>
+    </layer>
+
+    <!-- Yellow - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-1" time="left" time-op="le" time-value="83" />
+            <condition skill="113212" />
+            <result control-mode="bns" context-1="113212" />
+        </decision>
+    </layer>
+
+    <!-- Red - Lvl 2 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113671" />
+            <result control-mode="bns" context-1="113671" />
+        </decision>
+    </layer>
+
+    <!-- Blue - Lvl 2 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113681" />
+            <result control-mode="bns" context-1="113681" />
+        </decision>
+    </layer>
+
+    <!-- Else Yellow -->
+    <layer>
+        <decision>
+            <condition skill="113212" />
+            <result control-mode="bns" context-1="113212" />
+        </decision>
+    </layer>
+
+    <!-- C -->
+    <!-- Red - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113611" />
+            <result control-mode="bns" skillbar-7="113611" />
+        </decision>
+    </layer>
+
+    <!-- Blue - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113621" />
+            <result control-mode="bns" skillbar-7="113621" />
+        </decision>
+    </layer>
+
+    <!-- Yellow - Lvl 1 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83"/>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-1" time="left" time-op="le" time-value="83"/>
+            <condition skill="113202" />
+            <result control-mode="bns" skillbar-7="113202" />
+        </decision>
+    </layer>
+
+    <!-- Red - Lvl 2 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
+            <condition skill="113611" />
+            <result control-mode="bns" skillbar-7="113611" />
+        </decision>
+    </layer>
+
+    <!-- Blue - Lvl 2 missing -->
+    <layer>
+        <decision>
+            <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
+            <condition skill="113621" />
+            <result control-mode="bns" skillbar-7="113621" />
+        </decision>
+    </layer>
+
+    <!-- Else Yellow -->
+    <layer>
+        <decision>
+            <condition skill="113202" />
+            <result control-mode="bns" skillbar-7="113202" />
+        </decision>
+    </layer>
 </placeholder>

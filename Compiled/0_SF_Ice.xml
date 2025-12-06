@@ -1,6 +1,8 @@
 ﻿<patches>
     <!--
     Kiwi's Complete Overhaul
+    https://github.com/kvy1/kvy-xmls
+
     Melee Stance
         - Full rotation on T/G
             - Only uses Focus Chi and other specific skills if target is a boss (Can be used manually if you need for adds)
@@ -70,6 +72,16 @@
         <decision>
             <condition hk="off-cd" skill="182130" />
             <result control-mode="bns" context-2="182130" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="182130" />
+            <condition hk="distance" op="lt" range="4" />
+            <condition skill="182130" />
+            <result control-mode="bns" context-2="182130" />
+            <result control-mode="bns" special-1="182130" />
         </decision>
     </layer>
 

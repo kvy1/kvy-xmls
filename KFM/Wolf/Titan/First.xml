@@ -1,3 +1,51 @@
 <placeholder>
+<!--    if no red stack - get red stack-->
+<!--    metal on cd - do surge-->
+    
+    <!-- Start surge if metal unavailable -->
+    <layer>
+        <decision>
+            <condition skill="113200" not="y" />
+            <condition skill="113610" not="y" />
+            <condition skill="113615" not="y" />
+            <condition skill="113210" not="y" />
+            <condition skill="113670" not="y" />
+            <condition skill="113675" not="y" />
+            <condition hk="on-cd" skill="113211" />
+            <condition skill="113201" />
+            <result control-mode="bns" context-2="113201" />
+        </decision>
+    </layer>
+    
+    <layer>
+        <decision>
+            <condition skill="113200" not="y" />
+            <condition skill="113610" not="y" />
+            <condition skill="113615" not="y" />
+            <condition skill="113210" not="y" />
+            <condition skill="113670" not="y" />
+            <condition skill="113675" not="y" />
+            <condition skill="113211" />
+            <result control-mode="bns" context-2="113211" />
+        </decision>
+    </layer>
+    
+    <!-- Surge always on LMB -->
+    <layer>
+        <decision>
+            <condition skill="113201" />
+            <result control-mode="bns" context-1="113201" />
+        </decision>
+    </layer>
+    
+    <!-- Metal always on V -->
+    <layer>
+        <decision>
+            <condition skill="113211" />
+            <result control-mode="bns" skillbar-7="113211" />
+        </decision>
+    </layer>
 
+<!--    do metal-->
+    
 </placeholder>
