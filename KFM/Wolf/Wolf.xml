@@ -1,3 +1,103 @@
 <placeholder>
 
+    <!-- Timber Wolf on broken target -->
+    <layer>
+        <decision>
+            <condition hk="special" name="is-boss" target="y" />
+            <condition hk="flag" name="Break-1" target="y" />
+            <condition hk="off-cd" skill="113290" />
+            <condition skill="113290" />
+            <result control-mode="bns" context-2="113290" />
+        </decision>
+    </layer>
+    
+    <!-- Pack frenzy on G -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="113120" />
+            <result control-mode="bns" special-1="113120" />
+        </decision>
+    </layer>
+
+    <!-- Awakened Skills -->
+    <!-- Awk Claw -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="113750" />
+            <condition skill="113750" />
+            <result control-mode="bns" context-2="113750" />
+        </decision>
+    </layer>
+
+    <!-- Awk Iron Paw -->
+    <layer>
+        <decision>
+            <condition skill="113730" />
+            <result control-mode="bns" context-2="113730" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="113731" />
+            <result control-mode="bns" context-2="113731" />
+        </decision>
+    </layer>
+
+    <!-- Claw -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="113156" />
+            <condition skill="113156" />
+            <result control-mode="bns" context-2="113156" />
+        </decision>
+    </layer>
+    
+    <!-- Wild Paw -->
+    <layer>
+        <decision>
+            <condition skill="113151" />
+            <result control-mode="bns" context-2="113151" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="113148" />
+            <result control-mode="bns" context-2="113148" />
+        </decision>
+    </layer>
+
+    <!-- Iron Paw -->
+    <layer>
+        <decision>
+            <condition skill="113143" />
+            <result control-mode="bns" context-2="113143" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="113140" />
+            <result control-mode="bns" context-2="113140" />
+        </decision>
+    </layer>
+
+    <!-- Q/E Rework -->
+    <layer>
+        <decision>
+            <condition skill="420113115" />
+            <condition hk="distance" op="le" range="4" />
+            <result cmd-key-left="113115" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="420113110" />
+            <condition hk="distance" op="le" range="4" />
+            <result cmd-key-left="113110" control-mode="bns" />
+        </decision>
+    </layer>
+    <!-- Move SS to E -->
+    <layer>
+        <decision>
+            <condition skill="420113170" />
+            <result cmd-key-right="113170" control-mode="bns" />
+        </decision>
+    </layer>
 </placeholder>

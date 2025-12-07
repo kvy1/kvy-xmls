@@ -4,6 +4,36 @@
     <!-- #include file="Titan\Second.xml" -->
     <!-- #include file="Titan\First.xml" -->
 
+    <!-- Q/E Rework -->
+    <layer>
+        <!-- Within 4m then do targeted -->
+        <decision>
+            <condition hk="off-cd" skill="113420" />
+            <condition hk="distance" op="le" range="4" />
+            <result cmd-key-left="113421" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition hk="off-cd" skill="113410" />
+            <condition hk="distance" op="le" range="4" />
+            <result cmd-key-left="113411" control-mode="bns" />
+        </decision>
+        <!-- > 4m then do untargeted -->
+        <decision>
+            <condition hk="off-cd" skill="113420" />
+            <result cmd-key-left="113420" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition hk="off-cd" skill="113410" />
+            <result cmd-key-left="113410" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="420113490" />
+            <result cmd-key-right="113490" control-mode="bns" />
+        </decision>
+    </layer>
+
     <layer>
         <decision>
             <result control-mode="bns"
@@ -12,7 +42,7 @@
                     skillbar-3="113320"
                     skillbar-4="113230"
                     skillbar-5="113650"
-                    skillbar-6="113651"
+                    skillbar-6="111730"
                     skillbar-7="113652"
                     skillbar-8="501"
                     context-1="501"

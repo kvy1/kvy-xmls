@@ -7,7 +7,7 @@
     <!-- Wolf Base -->
     <layer>
         <decision>
-            <condition hk="soul-mask" value="8" />
+            <condition hk="soul-mask" value="8" skip-condition-move-check="y" skip-condition-target-check="y" />
             <result control-mode="bns"
                     skillbar-1="113100"
                     skillbar-2="113090"

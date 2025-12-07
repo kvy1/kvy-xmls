@@ -13,10 +13,10 @@
         - Break copied to X
     Titan
         / Mixed rotation on RMB
-        - Surge on LMB
-        - Extend on V
-        - Grab on X
-        - Wolf available in titan stance
+        ? Surge on LMB
+        X Extend on V
+        / Grab on X
+        / Wolf available in titan stance
     -->
     <patch file="skill3_contextscriptdata_kungfufighter_contextsimplemode_g3.xml">
         <!-- Remove Human + Wolf -->

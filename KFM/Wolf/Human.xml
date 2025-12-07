@@ -93,38 +93,33 @@
         </decision>
     </layer>
 
-    <!-- Scuffed Q/E -->
+    <!-- Q/E Rework -->
     <layer>
+        <!-- Within 4m then do targeted -->
         <decision>
-            <condition hk="off-cd" skill="111350" />
-            <condition hk="distance" op="le" range="3" />
-            <result cmd-key-left="111351" control-mode="bns" />
+            <condition hk="off-cd" skill="113420" />
+            <condition hk="distance" op="le" range="4" />
+            <result cmd-key-left="113421" control-mode="bns" />
         </decision>
         <decision>
-            <condition hk="off-cd" skill="111350" />
-            <result cmd-key-left="111350" control-mode="bns" />
+            <condition hk="off-cd" skill="113410" />
+            <condition hk="distance" op="le" range="4" />
+            <result cmd-key-left="113411" control-mode="bns" />
+        </decision>
+        <!-- > 4m then do untargeted -->
+        <decision>
+            <condition hk="off-cd" skill="113420" />
+            <result cmd-key-left="113420" control-mode="bns" />
         </decision>
         <decision>
-            <condition hk="off-cd" skill="111340" />
-            <condition hk="distance" op="le" range="3" />
-            <result cmd-key-left="111341" control-mode="bns" />
-        </decision>
-        <decision>
-            <condition hk="off-cd" skill="111340" />
-            <result cmd-key-left="111340" control-mode="bns" />
+            <condition hk="off-cd" skill="113410" />
+            <result cmd-key-left="113410" control-mode="bns" />
         </decision>
     </layer>
     <layer>
         <decision>
-            <condition hk="off-cd" skill="111410" />
-            <result cmd-key-right="111410" control-mode="bns" />
-        </decision>
-    </layer>
-
-    <layer>
-        <decision>
-            <condition skill="113650" not="y" />
-            <result control-mode="bns" stance="113260" />
+            <condition skill="420113490" />
+            <result cmd-key-right="113490" control-mode="bns" />
         </decision>
     </layer>
 
