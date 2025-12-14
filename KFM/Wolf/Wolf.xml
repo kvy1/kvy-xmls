@@ -32,14 +32,14 @@
     <!-- Awk Iron Paw -->
     <layer>
         <decision>
-            <condition skill="113730" />
-            <result control-mode="bns" context-2="113730" />
+            <condition skill="113731" />
+            <result control-mode="bns" context-2="113731" />
         </decision>
     </layer>
     <layer>
         <decision>
-            <condition skill="113731" />
-            <result control-mode="bns" context-2="113731" />
+            <condition skill="113730" />
+            <result control-mode="bns" context-2="113730" />
         </decision>
     </layer>
 

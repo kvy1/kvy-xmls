@@ -1,4 +1,20 @@
 <placeholder>
+    <!-- If heal available show stance change -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="182150" />
+            <result control-mode="bns" skillbar-8="181160" />
+        </decision>
+    </layer>
+
+    <!-- If res available show stance change -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="182360" />
+            <result control-mode="bns" special-2="181160" />
+        </decision>
+    </layer>
+    
     <!-- Anima -->
     <layer>
         <decision>
@@ -48,10 +64,12 @@
     <layer>
         <decision>
             <condition hk="off-cd" skill="182130" />
+            <condition hk="on-cd" skill="181050" time-op="lt" time-value="2"/>
             <result control-mode="bns" context-2="182130" />
         </decision>
     </layer>
 
+    <!-- Focus Chi -->
     <layer>
         <decision>
             <condition hk="off-cd" skill="182130" />
@@ -128,7 +146,13 @@
     </layer>
 
     <!-- B Ultimate to F -->
-
+    <layer>
+        <decision>
+            <condition skill="182460" />
+            <result control-mode="bns" context-3="182460" />
+        </decision>
+    </layer>
+    
     <layer>
         <decision>
             <result control-mode="bns"
@@ -138,7 +162,7 @@
                     skillbar-4="182100"
                     skillbar-5="182130"
                     skillbar-6="182581"
-                    skillbar-7="182360"
+                    skillbar-7="182140"
                     skillbar-8="182150"
                     context-1="182060"
                     context-2="501"
@@ -147,6 +171,7 @@
                     cmd-key-right="181250"
                     cmd-key-down="181270"
                     stance="181160"
+                    special-2="182360"
             />
         </decision>
     </layer>

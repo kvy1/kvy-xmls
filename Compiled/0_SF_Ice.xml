@@ -19,10 +19,23 @@
     -->
     <patch file="skill3_contextscriptdata_soulfighter_g2_contextsimplemode.xml">
         <select-nodes query="//stance[@stance='유권']">
-            <remove-children />
+            <remove-children/>
             <append-buffer>
 <![CDATA[
-<!-- Anima -->
+<layer>
+        <decision>
+            <condition hk="off-cd" skill="182150" />
+            <result control-mode="bns" skillbar-8="181160" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="182360" />
+            <result control-mode="bns" special-2="181160" />
+        </decision>
+    </layer>
+    
     <layer>
         <decision>
             <condition hk="on-cd" skill="182130" />
@@ -39,7 +52,6 @@
         </decision>
     </layer>
 
-    <!-- Ice Helix -->
     <layer>
         <decision>
             <condition hk="distance" op="lt" range="4" />
@@ -50,7 +62,6 @@
         </decision>
     </layer>
 
-    <!-- Frost Storm -->
     <layer>
         <decision>
             <condition hk="distance" op="lt" range="4" />
@@ -59,7 +70,6 @@
         </decision>
     </layer>
 
-    <!-- Howling Blast if Focus Chi available -->
     <layer>
         <decision>
             <condition hk="off-cd" skill="182130" />
@@ -71,6 +81,7 @@
     <layer>
         <decision>
             <condition hk="off-cd" skill="182130" />
+            <condition hk="on-cd" skill="181050" time-op="lt" time-value="2"/>
             <result control-mode="bns" context-2="182130" />
         </decision>
     </layer>
@@ -85,7 +96,6 @@
         </decision>
     </layer>
 
-    <!-- DF -->
     <layer>
         <decision>
             <condition skill="181444" />
@@ -150,8 +160,13 @@
         </decision>
     </layer>
 
-    <!-- B Ultimate to F -->
-
+    <layer>
+        <decision>
+            <condition skill="182460" />
+            <result control-mode="bns" context-3="182460" />
+        </decision>
+    </layer>
+    
     <layer>
         <decision>
             <result control-mode="bns"
@@ -161,7 +176,7 @@
                     skillbar-4="182100"
                     skillbar-5="182130"
                     skillbar-6="182581"
-                    skillbar-7="182360"
+                    skillbar-7="182140"
                     skillbar-8="182150"
                     context-1="182060"
                     context-2="501"
@@ -170,6 +185,136 @@
                     cmd-key-right="181250"
                     cmd-key-down="181270"
                     stance="181160"
+                    special-2="182360"
+            />
+        </decision>
+    </layer>
+]]>
+            </append-buffer>
+        </select-nodes>
+
+        <select-nodes query="//stance[@stance='기공']">
+            <remove-children/>
+            <append-buffer>
+<![CDATA[
+<layer>
+        <decision>
+            <condition hk="on-cd" skill="182150"/>
+            <result control-mode="bns" skillbar-8="181161"/>
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="on-cd" skill="182360"/>
+            <result control-mode="bns" special-2="181161"/>
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="182494"/>
+            <result control-mode="bns" context-2="182494"/>
+        </decision>
+        <decision>
+            <condition skill="182493"/>
+            <result control-mode="bns" context-2="182493"/>
+        </decision>
+        <decision>
+            <condition skill="182492"/>
+            <result control-mode="bns" context-2="182492"/>
+        </decision>
+        <decision>
+            <condition skill="182491"/>
+            <result control-mode="bns" context-2="182491"/>
+        </decision>
+        <decision>
+            <condition skill="182490"/>
+            <result control-mode="bns" context-2="182490"/>
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="182210"/>
+            <result control-mode="bns" context-2="182210"/>
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="181180"/>
+            <result control-mode="bns" context-2="181180"/>
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="182180" skip-condition-target-check="y"/>
+            <result context-2="182180" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition skill="182181" skip-condition-target-check="y"/>
+            <result context-2="182181" control-mode="bns"/>
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="182173" skip-condition-target-check="y"/>
+            <result context-2="182173" context-ui-effect="key-change" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition skill="182172" skip-condition-target-check="y"/>
+            <result context-2="182172" context-ui-effect="key-change" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition skill="182171" skip-condition-target-check="y"/>
+            <result context-2="182171" context-ui-effect="key-change" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition skill="182170" skip-condition-target-check="y"/>
+            <result context-2="182170" control-mode="bns"/>
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="181250"/>
+            <condition hk="distance" op="le" range="4"/>
+            <result cmd-key-left="181250" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition hk="off-cd" skill="181230"/>
+            <condition hk="distance" op="le" range="4"/>
+            <result cmd-key-left="181230" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition hk="off-cd" skill="181260"/>
+            <result cmd-key-left="181260" control-mode="bns"/>
+        </decision>
+        <decision>
+            <condition hk="off-cd" skill="181240"/>
+            <result cmd-key-left="181240" control-mode="bns"/>
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <result control-mode="bns"
+                    skillbar-1="182060"
+                    skillbar-2="181161"
+                    skillbar-3="182200"
+                    skillbar-4="182220"
+                    skillbar-5="182130"
+                    skillbar-6="182580"
+                    skillbar-7="182140"
+                    skillbar-8="182150"
+                    context-1="182060"
+                    context-2="501"
+                    context-3="501"
+                    cmd-key-left="181240"
+                    cmd-key-right="181260"
+                    cmd-key-down="181280"
+                    stance="181161"
+                    special-2="182360"
             />
         </decision>
     </layer>

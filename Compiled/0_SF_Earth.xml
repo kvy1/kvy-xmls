@@ -22,7 +22,6 @@
     <patch file="skill3_contextscriptdata_soulfighter_g1_contextsimplemode.xml">
         <select-nodes query="//stance[@stance='유권']">
             <remove-children/>
-            <append-buffer><!-- Include file not found: C:\Users\alexb\Documents\BnS\XML Parts\SF\Earth\Melee.xml -->
             </append-buffer>
         </select-nodes>
     </patch>

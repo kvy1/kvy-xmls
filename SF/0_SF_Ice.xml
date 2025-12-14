@@ -19,9 +19,16 @@
     -->
     <patch file="skill3_contextscriptdata_soulfighter_g2_contextsimplemode.xml">
         <select-nodes query="//stance[@stance='유권']">
-            <remove-children />
+            <remove-children/>
             <append-buffer>
                 <!-- #include file="Ice\Melee.xml" -->
+            </append-buffer>
+        </select-nodes>
+
+        <select-nodes query="//stance[@stance='기공']">
+            <remove-children/>
+            <append-buffer>
+                <!-- #include file="Ice\Ranged.xml" -->
             </append-buffer>
         </select-nodes>
     </patch>

@@ -19,15 +19,12 @@
         / Wolf available in titan stance
     -->
     <patch file="skill3_contextscriptdata_kungfufighter_contextsimplemode_g3.xml">
-        <!-- Remove Human + Wolf -->
         <select-nodes query="//stance[@stance='단타']">
             <remove-children />
             <append-buffer>
 <![CDATA[
 
-<!-- Surge Finishers -->
-    <!-- Yellow Surge Finisher -->
-    <layer>
+<layer>
         <decision>
             <condition skill="113210" />
             <result control-mode="bns" context-2="113210" />
@@ -35,7 +32,6 @@
             <result control-mode="bns" context-1="113210" />
         </decision>
     </layer>
-    <!-- Red Surge Finisher -->
     <layer>
         <decision>
             <condition skill="113670" />
@@ -44,7 +40,6 @@
             <result control-mode="bns" context-1="113670" />
         </decision>
     </layer>
-    <!-- Blue Surge Finisher -->
     <layer>
         <decision>
             <condition skill="113675" />
@@ -54,8 +49,6 @@
         </decision>
     </layer>
 
-    <!-- Metal Finishers -->
-    <!--Yellow Metal Finisher -->
     <layer>
         <decision>
             <condition skill="113200" />
@@ -64,7 +57,6 @@
             <result control-mode="bns" skillbar-7="113200" />
         </decision>
     </layer>
-    <!-- Red Metal Finisher -->
     <layer>
         <decision>
             <condition skill="113610" />
@@ -73,7 +65,6 @@
             <result control-mode="bns" skillbar-7="113610" />
         </decision>
     </layer>
-    <!-- Blue Metal Finisher -->
     <layer>
         <decision>
             <condition skill="113615" />
@@ -84,8 +75,7 @@
     </layer>
 
 
-<!-- Gap close above 4m -->
-    <layer>
+<layer>
         <decision>
             <condition hk="special" name="is-boss" target="y" />
             <condition hk="distance" op="ge" range="4" />
@@ -94,8 +84,6 @@
         </decision>
     </layer>
 
-    <!-- V4XVVV Rotation -->
-    <!-- KungfuMaster_G3_Attack_ChangeIronFist_Lv1_Flag -->
     <layer>
         <decision>
             <condition hk="off-cd" skill="113055" />
@@ -140,7 +128,6 @@
         </decision>
     </layer>
 
-    <!-- Normal RMB Rotation -->
     <layer>
         <decision>
             <condition skill="113720" skip-condition-move-check="y" skip-condition-target-check="y" />
@@ -178,9 +165,7 @@
         </decision>
     </layer>
 
-    <!-- Q/E Rework -->
     <layer>
-        <!-- Within 4m then do targeted -->
         <decision>
             <condition hk="off-cd" skill="113420" />
             <condition hk="distance" op="le" range="4" />
@@ -191,7 +176,6 @@
             <condition hk="distance" op="le" range="4" />
             <result cmd-key-left="113411" control-mode="bns" />
         </decision>
-        <!-- > 4m then do untargeted -->
         <decision>
             <condition hk="off-cd" skill="113420" />
             <result cmd-key-left="113420" control-mode="bns" />
@@ -208,7 +192,6 @@
         </decision>
     </layer>
 
-    <!-- If wolf available put this on tab -->
     <layer>
         <decision>
             <condition skill="113650" />
@@ -281,8 +264,7 @@
     </layer>
 
 
-<!-- Timber Wolf on broken target -->
-    <layer>
+<layer>
         <decision>
             <condition hk="special" name="is-boss" target="y" />
             <condition hk="flag" name="Break-1" target="y" />
@@ -292,7 +274,6 @@
         </decision>
     </layer>
     
-    <!-- Pack frenzy on G -->
     <layer>
         <decision>
             <condition hk="off-cd" skill="113120" />
@@ -300,8 +281,6 @@
         </decision>
     </layer>
 
-    <!-- Awakened Skills -->
-    <!-- Awk Claw -->
     <layer>
         <decision>
             <condition hk="off-cd" skill="113750" />
@@ -310,21 +289,19 @@
         </decision>
     </layer>
 
-    <!-- Awk Iron Paw -->
-    <layer>
-        <decision>
-            <condition skill="113730" />
-            <result control-mode="bns" context-2="113730" />
-        </decision>
-    </layer>
     <layer>
         <decision>
             <condition skill="113731" />
             <result control-mode="bns" context-2="113731" />
         </decision>
     </layer>
+    <layer>
+        <decision>
+            <condition skill="113730" />
+            <result control-mode="bns" context-2="113730" />
+        </decision>
+    </layer>
 
-    <!-- Claw -->
     <layer>
         <decision>
             <condition hk="off-cd" skill="113156" />
@@ -333,7 +310,6 @@
         </decision>
     </layer>
     
-    <!-- Wild Paw -->
     <layer>
         <decision>
             <condition skill="113151" />
@@ -347,7 +323,6 @@
         </decision>
     </layer>
 
-    <!-- Iron Paw -->
     <layer>
         <decision>
             <condition skill="113143" />
@@ -361,7 +336,6 @@
         </decision>
     </layer>
 
-    <!-- Q/E Rework -->
     <layer>
         <decision>
             <condition skill="420113115" />
@@ -374,7 +348,6 @@
             <result cmd-key-left="113110" control-mode="bns" />
         </decision>
     </layer>
-    <!-- Move SS to E -->
     <layer>
         <decision>
             <condition skill="420113170" />
@@ -383,7 +356,6 @@
     </layer>
 
 
-    <!-- Wolf Base -->
     <layer>
         <decision>
             <condition hk="soul-mask" value="8" skip-condition-move-check="y" skip-condition-target-check="y" />
@@ -405,7 +377,6 @@
             />
         </decision>
     </layer>
-    <!-- Human Base -->
     <layer>
         <decision>
             <result control-mode="bns"
@@ -430,15 +401,12 @@
             </append-buffer>
         </select-nodes>
 
-        <!-- Remove Titan Stance -->
         <select-nodes query="//stance[@stance='연계']">
             <remove-children/>
             <append-buffer>
 <![CDATA[
 
-<!-- Surge Finishers -->
-    <!-- Yellow Surge Finisher -->
-    <layer>
+<layer>
         <decision>
             <condition skill="113210" />
             <result control-mode="bns" context-2="113210" />
@@ -446,7 +414,6 @@
             <result control-mode="bns" context-1="113210" />
         </decision>
     </layer>
-    <!-- Red Surge Finisher -->
     <layer>
         <decision>
             <condition skill="113670" />
@@ -455,7 +422,6 @@
             <result control-mode="bns" context-1="113670" />
         </decision>
     </layer>
-    <!-- Blue Surge Finisher -->
     <layer>
         <decision>
             <condition skill="113675" />
@@ -465,8 +431,6 @@
         </decision>
     </layer>
 
-    <!-- Metal Finishers -->
-    <!--Yellow Metal Finisher -->
     <layer>
         <decision>
             <condition skill="113200" />
@@ -475,7 +439,6 @@
             <result control-mode="bns" skillbar-7="113200" />
         </decision>
     </layer>
-    <!-- Red Metal Finisher -->
     <layer>
         <decision>
             <condition skill="113610" />
@@ -484,7 +447,6 @@
             <result control-mode="bns" skillbar-7="113610" />
         </decision>
     </layer>
-    <!-- Blue Metal Finisher -->
     <layer>
         <decision>
             <condition skill="113615" />
@@ -495,10 +457,7 @@
     </layer>
 
 
-<!-- RMB - Mixed rotation -->
-
-    <!-- Red - Lvl 1 missing -->
-    <layer>
+<layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -515,7 +474,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
@@ -533,7 +491,6 @@
         </decision>
     </layer>
 
-    <!-- Yellow - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
@@ -551,7 +508,6 @@
         </decision>
     </layer>
 
-    <!-- Red - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -567,7 +523,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
@@ -583,7 +538,6 @@
         </decision>
     </layer>
 
-    <!-- Else Yellow -->
     <layer>
         <decision>
             <condition skill="113213" />
@@ -597,8 +551,6 @@
         </decision>
     </layer>
 
-    <!-- LMB -->
-    <!-- Red - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
@@ -608,7 +560,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
@@ -618,7 +569,6 @@
         </decision>
     </layer>
 
-    <!-- Yellow - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
@@ -628,7 +578,6 @@
         </decision>
     </layer>
 
-    <!-- Red - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -637,7 +586,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
@@ -646,7 +594,6 @@
         </decision>
     </layer>
 
-    <!-- Else Yellow -->
     <layer>
         <decision>
             <condition skill="113213" />
@@ -654,8 +601,6 @@
         </decision>
     </layer>
 
-    <!-- C -->
-    <!-- Red - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
@@ -665,7 +610,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
@@ -675,7 +619,6 @@
         </decision>
     </layer>
 
-    <!-- Yellow - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83"/>
@@ -685,7 +628,6 @@
         </decision>
     </layer>
 
-    <!-- Red - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -694,7 +636,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
@@ -703,7 +644,6 @@
         </decision>
     </layer>
 
-    <!-- Else Yellow -->
     <layer>
         <decision>
             <condition skill="113203" />
@@ -712,10 +652,7 @@
     </layer>
 
 
-<!-- RMB - Mixed rotation -->
-
-    <!-- Red - Lvl 1 missing -->
-    <layer>
+<layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -732,7 +669,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
@@ -750,7 +686,6 @@
         </decision>
     </layer>
 
-    <!-- Yellow - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
@@ -768,7 +703,6 @@
         </decision>
     </layer>
 
-    <!-- Red - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -784,7 +718,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
@@ -800,7 +733,6 @@
         </decision>
     </layer>
 
-    <!-- Else Yellow -->
     <layer>
         <decision>
             <condition skill="113212" />
@@ -814,8 +746,6 @@
         </decision>
     </layer>
 
-    <!-- LMB -->
-    <!-- Red - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
@@ -825,7 +755,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
@@ -835,7 +764,6 @@
         </decision>
     </layer>
 
-    <!-- Yellow - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83" />
@@ -845,7 +773,6 @@
         </decision>
     </layer>
 
-    <!-- Red - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -854,7 +781,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
@@ -863,7 +789,6 @@
         </decision>
     </layer>
 
-    <!-- Else Yellow -->
     <layer>
         <decision>
             <condition skill="113212" />
@@ -871,8 +796,6 @@
         </decision>
     </layer>
 
-    <!-- C -->
-    <!-- Red - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
@@ -882,7 +805,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-3" time="left" time-op="le" time-value="83" />
@@ -892,7 +814,6 @@
         </decision>
     </layer>
 
-    <!-- Yellow - Lvl 1 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-1" time="left" time-op="le" time-value="83"/>
@@ -902,7 +823,6 @@
         </decision>
     </layer>
 
-    <!-- Red - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-2" time="left" time-op="le" time-value="83" />
@@ -911,7 +831,6 @@
         </decision>
     </layer>
 
-    <!-- Blue - Lvl 2 missing -->
     <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag2-3" time="left" time-op="le" time-value="83" />
@@ -920,7 +839,6 @@
         </decision>
     </layer>
 
-    <!-- Else Yellow -->
     <layer>
         <decision>
             <condition skill="113202" />
@@ -929,11 +847,7 @@
     </layer>
 
 
-<!--    if no red stack - get red stack-->
-<!--    metal on cd - do surge-->
-    
-    <!-- Start surge if metal unavailable -->
-    <layer>
+<layer>
         <decision>
             <condition skill="113200" not="y" />
             <condition skill="113610" not="y" />
@@ -960,7 +874,6 @@
         </decision>
     </layer>
     
-    <!-- Surge always on LMB -->
     <layer>
         <decision>
             <condition skill="113201" />
@@ -968,7 +881,6 @@
         </decision>
     </layer>
     
-    <!-- Metal always on V -->
     <layer>
         <decision>
             <condition skill="113211" />
@@ -976,12 +888,8 @@
         </decision>
     </layer>
 
-<!--    do metal-->
 
-
-    <!-- Q/E Rework -->
     <layer>
-        <!-- Within 4m then do targeted -->
         <decision>
             <condition hk="off-cd" skill="113420" />
             <condition hk="distance" op="le" range="4" />
@@ -992,7 +900,6 @@
             <condition hk="distance" op="le" range="4" />
             <result cmd-key-left="113411" control-mode="bns" />
         </decision>
-        <!-- > 4m then do untargeted -->
         <decision>
             <condition hk="off-cd" skill="113420" />
             <result cmd-key-left="113420" control-mode="bns" />
