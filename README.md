@@ -1,6 +1,6 @@
 # KiwiXML Compiler
 
-**KiwiXML Compiler** is a cross‑platform XML processor built to simplify working with Blade & Soul XMLs.
+**KiwiXML Compiler** is a cross‑platform XML processor built to simplify working with Blade & Soul XMLs
 
 ---
 
