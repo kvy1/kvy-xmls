@@ -105,6 +105,15 @@
         </decision>
     </layer>
 
+    <!-- Stun Tab on Z -->
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="113260" />
+            <condition skill="113260" skip-condition-move-check="y" variation-id="3"/>
+            <result skillbar-5="113260" control-mode="bns" />
+        </decision>
+    </layer>
+
     <layer>
         <decision>
             <result control-mode="bns"
