@@ -1,0 +1,12 @@
+[package]
+name = "KiwiXML"
+version = "0.1.1"
+edition = "2024"
+
+[dependencies]
+regex = "1"
+rayon = "1.7.0"
+walkdir = "2"
+anyhow = "1"
+once_cell = "1"
+chrono = { version = "0.4", features = ["clock"] }
