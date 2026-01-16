@@ -1,4 +1,4 @@
-﻿<patches>
+<patches>
     <patch file="skill3_contextscriptdata_kungfufighter_*.xml">
         <select-nodes query="result[@*[(.='111430') or (.='111440')]]/..">
             <remove-children />
@@ -6,6 +6,7 @@
         
         <select-nodes query="//stance">
             <append-buffer>
+                
 <![CDATA[
 <layer>
         <decision>
@@ -21,6 +22,7 @@
         <select-nodes query="//stance[@link='mount']">
             <remove-children />
             <append-buffer>
+                
 <![CDATA[
 <layer>
         <decision>

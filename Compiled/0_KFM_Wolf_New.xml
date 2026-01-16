@@ -1,4 +1,4 @@
-﻿<patches>
+<patches>
     <!--
     Pretty much a complete wolf overhaul
     ( Grab changes are handled in a separate XML )
@@ -22,8 +22,9 @@
         <select-nodes query="//stance[@stance='단타']">
             <remove-children />
             <append-buffer>
+                
 <![CDATA[
-
+<![CDATA[
 <layer>
         <decision>
             <condition skill="113210" />
@@ -73,8 +74,10 @@
             <result control-mode="bns" skillbar-7="113615" />
         </decision>
     </layer>
+]]>
 
-
+    
+<![CDATA[
 <layer>
         <decision>
             <condition hk="special" name="is-boss" target="y" />
@@ -262,8 +265,9 @@
             <result control-mode="bns" special-2="112725" />
         </decision>
     </layer>
-
-
+]]>
+    
+<![CDATA[
 <layer>
         <decision>
             <condition hk="special" name="is-boss" target="y" />
@@ -354,7 +358,7 @@
             <result cmd-key-right="113170" control-mode="bns" />
         </decision>
     </layer>
-
+]]>
 
     <layer>
         <decision>
@@ -404,8 +408,9 @@
         <select-nodes query="//stance[@stance='연계']">
             <remove-children/>
             <append-buffer>
+                
 <![CDATA[
-
+<![CDATA[
 <layer>
         <decision>
             <condition skill="113210" />
@@ -455,8 +460,9 @@
             <result control-mode="bns" skillbar-7="113615" />
         </decision>
     </layer>
-
-
+]]>
+    
+<![CDATA[
 <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
@@ -650,8 +656,9 @@
             <result control-mode="bns" skillbar-7="113203" />
         </decision>
     </layer>
-
-
+]]>
+    
+<![CDATA[
 <layer>
         <decision>
             <condition hk="effect-time" alias="KungfuMaster_G3_Wolf_ChangeWolf_Lv1_Flag1-2" time="left" time-op="le" time-value="83" />
@@ -845,8 +852,9 @@
             <result control-mode="bns" skillbar-7="113202" />
         </decision>
     </layer>
-
-
+]]>
+    
+<![CDATA[
 <layer>
         <decision>
             <condition skill="113200" not="y" />
@@ -887,7 +895,7 @@
             <result control-mode="bns" skillbar-7="113211" />
         </decision>
     </layer>
-
+]]>
 
     <layer>
         <decision>

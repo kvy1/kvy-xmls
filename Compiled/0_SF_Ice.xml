@@ -1,4 +1,4 @@
-﻿<patches>
+<patches>
     <!--
     Kiwi's Complete Overhaul
     https://github.com/kvy1/kvy-xmls
@@ -21,6 +21,7 @@
         <select-nodes query="//stance[@stance='유권']">
             <remove-children/>
             <append-buffer>
+                
 <![CDATA[
 <layer>
         <decision>
@@ -196,6 +197,7 @@
         <select-nodes query="//stance[@stance='기공']">
             <remove-children/>
             <append-buffer>
+                
 <![CDATA[
 <layer>
         <decision>
@@ -293,6 +295,14 @@
         <decision>
             <condition hk="off-cd" skill="181240"/>
             <result cmd-key-left="181240" control-mode="bns"/>
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="off-cd" skill="113260" />
+            <condition skill="113260" skip-condition-move-check="y" variation-id="3"/>
+            <result skillbar-5="113260" control-mode="bns" />
         </decision>
     </layer>
 

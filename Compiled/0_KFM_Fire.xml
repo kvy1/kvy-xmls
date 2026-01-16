@@ -1,0 +1,444 @@
+<patches>
+    <patch file="skill3_contextscriptdata_kungfufighter_contextsimplemode_g1.xml">
+        <select-nodes query="//stance[@stance='단타']">
+            <remove-children />
+            <append-buffer>
+                
+<![CDATA[
+<layer>
+        <decision>
+            <condition hk="special" name="is-boss" target="y" />
+            <condition hk="distance" op="ge" range="6" />
+            <condition hk="off-cd" skill="111330" />
+            <condition skill="111330" />
+            <result control-mode="bns" context-2="111330" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="distance" op="ge" range="6" />
+            <result control-mode="bns" context-2="501" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="var-id" skill="111400" op="eq" value="5" />
+            <result control-mode="bns" context-6="111450" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111241" />
+            <result control-mode="bns" special-1="111241" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition hk="effect" flag="defence" target="y" />
+            <condition hk="off-cd" skill="111320" />
+            <condition skill="111320" />
+            <result control-mode="bns" context-2="111320" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition hk="on-cd" skill="111400" />
+            <condition hk="effect-time" flag-type="modify-ability-114" time="left" time-op="lt" time-value="1" />
+            <condition hk="off-cd" skill="111370" />
+            <condition skill="111370" />
+            <result control-mode="bns" special-1="111370" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition hk="off-cd" skill="111240" />
+            <condition hk="on-cd" skill="111400" />
+            <condition skill="111240" />
+            <result control-mode="bns" special-1="111240" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition hk="special" name="is-boss" target="y" />
+            <condition hk="off-cd" skill="111400" />
+            <condition skill="111400" />
+            <result control-mode="bns" special-1="111400" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="special" name="is-boss" target="y" />
+            <condition hk="effect-time" flag-type="modify-ability-428" time="left" time-op="lt" time-value="2" />
+            <condition hk="off-cd" skill="111380" />
+            <condition skill="111380" />
+            <result control-mode="bns" context-2="111380" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="special" name="is-boss" target="y" />
+            <condition hk="effect-time" flag-type="modify-ability-428" time="left" time-op="lt" time-value="2" />
+            <condition hk="off-cd" skill="111380" />
+            <condition skill="111380" />
+            <result control-mode="bns" special-1="111380" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111380" />
+        </decision>
+        <decision>
+            <condition hk="effect-time" flag-type="modify-ability-428" time="left" time-op="lt" time-value="2" />
+            <condition hk="off-cd" skill="111380" />
+            <condition hk="off-cd" skill="111230" />
+            <condition skill="111230" />
+            <result control-mode="bns" special-1="111230" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition skill="111370" skip-condition-move-check="y" variation-id="1" />
+            <condition hk="off-cd" skill="111210" />
+            <condition skill="111210" />
+            <result control-mode="bns" context-2="111210" />
+            <result control-mode="bns" special-2="111210" key-status="unpress" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition hk="skill-time" skill="111210" time="elapsed" time-op="gt" time-value="2" />
+            <condition skill="111370" skip-condition-move-check="y" variation-id="1" />
+            <condition hk="off-cd" skill="111360" />
+            <condition skill="111360" />
+            <result control-mode="bns" context-2="111360" />
+            <result control-mode="bns" special-2="111360" key-status="unpress" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition hk="distance" op="lt" range="5" />
+            <condition hk="off-cd" skill="111050" />
+            <condition skill="111050" />
+            <result control-mode="bns" special-1="111050" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111727" />
+            <result context-2="111727" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111726" />
+            <result context-2="111726" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111725" />
+            <result context-2="111725" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111724" />
+            <result context-2="111724" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111723" />
+            <result context-2="111723" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111722" />
+            <result context-2="111722" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111721" />
+            <result context-2="111721" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111720" />
+            <result context-2="111720" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111527" />
+            <result context-2="111527" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111526" />
+            <result context-2="111526" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111525" />
+            <result context-2="111525" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111524" />
+            <result context-2="111524" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111523" />
+            <result context-2="111523" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111522" />
+            <result context-2="111522" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111521" />
+            <result context-2="111521" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111520" />
+            <result context-2="111520" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111707" />
+            <result context-2="111707" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111706" />
+            <result context-2="111706" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111705" />
+            <result context-2="111705" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111704" />
+            <result context-2="111704" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111703" />
+            <result context-2="111703" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111702" />
+            <result context-2="111702" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111701" />
+            <result context-2="111701" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111700" />
+            <result context-2="111700" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111187" />
+            <result context-2="111187" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111186" />
+            <result context-2="111186" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111185" />
+            <result context-2="111185" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111184" />
+            <result context-2="111184" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111183" />
+            <result context-2="111183" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111182" />
+            <result context-2="111182" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111181" />
+            <result context-2="111181" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="111180" />
+            <result context-2="111180" context-ui-effect="combo" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111220" />
+            <result control-mode="bns" skillbar-4="111220" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111241" />
+            <result control-mode="bns" context-2="111241" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="112725" />
+            <result control-mode="bns" skillbar-8="112725" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111730" />
+            <result control-mode="bns" skillbar-6="111730" context-ui-effect="immune-break" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="69000103" />
+            <condition skill="420111350" />
+            <result cmd-key-left="111351" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="420111350" />
+            <result cmd-key-left="111350" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="420111340" />
+            <condition skill="69000103" />
+            <result cmd-key-left="111341" control-mode="bns" />
+        </decision>
+        <decision>
+            <condition skill="420111340" />
+            <result cmd-key-left="111340" control-mode="bns" />
+        </decision>
+    </layer>
+    <layer>
+        <decision>
+            <condition skill="420111410" />
+            <result cmd-key-right="111410" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <condition skill="111310" />
+            <result skillbar-2="111310" control-mode="bns" />
+        </decision>
+    </layer>
+
+    <layer>
+        <decision>
+            <result control-mode="bns"
+                    skillbar-1="111080"
+                    skillbar-2="111330"
+                    skillbar-3="111210"
+                    skillbar-4="111240"
+                    skillbar-5="111360"
+                    skillbar-6="111730"
+                    skillbar-7="111390"
+                    skillbar-8="111400"
+                    context-1="111080"
+                    context-2="501"
+                    context-3="501"
+                    cmd-key-left="111340"
+                    cmd-key-right="111350"
+                    cmd-key-down="111410"
+                    stance="111000"
+            />
+        </decision>
+    </layer>
+]]>
+            </append-buffer>
+        </select-nodes>
+
+        <select-nodes query="result[@*[(.='111450')]]/..">
+            <remove-children />
+        </select-nodes>
+        <select-nodes query="result[@*[(.='111020')]]/..">
+            <remove-children />
+        </select-nodes>
+        <select-nodes query="result[@*[(.='111030')]]/..">
+            <remove-children />
+        </select-nodes>
+        <select-nodes query="result[@*[(.='111540')]]/..">
+            <remove-children />
+        </select-nodes>
+        <select-nodes query="result[@*[(.='111270')]]/..">
+            <remove-children />
+        </select-nodes>
+        <select-nodes query="result[@*[(.='111430') or (.='111440')]]/..">
+            <remove-children />
+        </select-nodes>
+    </patch>
+</patches>

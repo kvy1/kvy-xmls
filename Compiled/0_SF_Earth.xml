@@ -1,4 +1,4 @@
-﻿<patches>
+<patches>
     <!--
     Kiwi's Complete Overhaul
     https://github.com/kvy1/kvy-xmls
@@ -22,6 +22,12 @@
     <patch file="skill3_contextscriptdata_soulfighter_g1_contextsimplemode.xml">
         <select-nodes query="//stance[@stance='유권']">
             <remove-children/>
+            <append-buffer>
+                
+<![CDATA[
+
+]]>
+            </append-buffer>
         </select-nodes>
     </patch>
 </patches>

@@ -1,0 +1,10 @@
+<patches>
+    <patch file="skill3_contextscriptdata_kungfufighter*_g1.xml">
+        <select-nodes query="//stance[@stance='단타']">
+            <remove-children />
+            <append-buffer>
+                <!-- #include file="Fire\Main.xml" -->
+            </append-buffer>
+        </select-nodes>
+    </patch>
+</patches>

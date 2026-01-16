@@ -1,4 +1,4 @@
-﻿<patches>
+<patches>
     <patch file="skill3_contextscriptdata*.xml">
         <select-nodes query="//condition[@skill[(.='170390')]]/following-sibling::result[@*[(.='170390')]]/..">
             <remove-children />
