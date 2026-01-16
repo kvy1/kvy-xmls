@@ -54,68 +54,72 @@ fn normalize_include_path(base_dir: &Path, include: &str) -> PathBuf {
     base_dir.join(normalized)
 }
 
-fn expand_includes(file_path: &Path) -> Result<String> {
+fn expand_includes(file_path: &Path, is_root: bool) -> Result<String> {
     let content = fs::read_to_string(file_path)?;
-    let pattern = Regex::new(r#"<!--\s*#include file="(.*?)"\s*-->"#)?;
+    let include_re = Regex::new(r#"<!--\s*#include file="(.*?)"\s*-->"#)?;
     let dir = file_path.parent().unwrap_or_else(|| Path::new("."));
 
-    let replaced = pattern.replace_all(&content, |caps: &regex::Captures| {
-        let include = caps[1].trim();
-        let include_path = normalize_include_path(dir, include);
-        if include_path.exists() {
-            match expand_includes(&include_path) {
-                Ok(included) => {
-                    log_message(&format!("Included: {}", include_path.display()));
-                    included
-                }
-                Err(err) => {
-                    log_message(&format!(
-                        "Error reading include {}: {}",
-                        include_path.display(),
-                        err
-                    ));
-                    format!("<!-- Include not found: {} -->", include_path.display())
+    let replaced = include_re.replace_all(&content, |caps: &regex::Captures| {
+        let include_path = normalize_include_path(dir, caps[1].trim());
+        if !include_path.exists() {
+            log_message(&format!("Missing include: {}", include_path.display()));
+            return format!("<!-- Include not found: {} -->", include_path.display());
+        }
+
+        match expand_includes(&include_path, false) {
+            Ok(included_content) => {
+                let inner = remove_placeholders(&included_content);
+                let inner = strip_comments_and_format_spaces(&inner);
+
+                log_message(&format!("Included: {}", include_path.display()));
+
+                if is_root {
+                    format!("<![CDATA[\n{}\n]]>", inner)
+                } else {
+                    inner
                 }
             }
-        } else {
-            log_message(&format!("Missing include: {}", include_path.display()));
-            format!("<!-- Include not found: {} -->", include_path.display())
+            Err(err) => {
+                log_message(&format!(
+                    "Error including {}: {}",
+                    include_path.display(),
+                    err
+                ));
+                format!("<!-- Error including {}: {} -->", include_path.display(), err)
+            }
         }
     });
 
-    let no_comments = remove_commented_lines(&replaced);
-    let wrapped = wrap_placeholder_content(&no_comments);
-    Ok(wrapped)
+    if is_root {
+        Ok(replaced.to_string())
+    } else {
+        let cleaned = remove_comments(&remove_placeholders(&replaced));
+        Ok(cleaned)
+    }
 }
 
-fn remove_commented_lines(input: &str) -> String {
-    let pattern = Regex::new(r"<!--.*?-->").unwrap();
-    input
-        .lines()
-        .filter(|line| !pattern.is_match(line))
-        .collect::<Vec<_>>()
-        .join("\n")
+fn remove_placeholders(input: &str) -> String {
+    let re = Regex::new(r"(?is)<placeholder[^>]*>(.*?)</placeholder>").unwrap();
+    re.replace_all(input, "$1").to_string()
 }
 
-fn wrap_placeholder_content(input: &str) -> String {
-    let pattern = Regex::new(r"(?i)<placeholder>(?s)(.*?)</placeholder>").unwrap();
-    let cdata_regex = Regex::new(r"<!\[CDATA\[(.*?)\]\]>").unwrap();
+fn remove_comments(input: &str) -> String {
+    let re = Regex::new(r"(?s)<!--.*?-->").unwrap();
+    re.replace_all(input, "").to_string()
+}
 
-    pattern
-        .replace_all(input, |caps: &regex::Captures| {
-            let inner = caps[1].trim();
-            let inner = cdata_regex.replace_all(inner, "$1");
-            format!("\n<![CDATA[\n{}\n]]>", inner)
-        })
-        .to_string()
+fn strip_comments_and_format_spaces(input: &str) -> String {
+    let comment_re = Regex::new(r"(?s)<!--.*?-->").unwrap();
+    let space_re = Regex::new(r"\s{2,}").unwrap();
+    let temp = comment_re.replace_all(input, "");
+    let temp = temp.replace('\n', "").replace('\r', "");
+    space_re.replace_all(&temp, " ").into_owned()
 }
 
 fn process_xml_files(base_dir: &Path, output_dir: &Path) -> Result<()> {
     fs::create_dir_all(output_dir)?;
-
     let file_re = Regex::new(r"^\d_.*\.xml$")?;
 
-    // Process only one folder deep (e.g., ./KFM/*.xml)
     let files: Vec<PathBuf> = WalkDir::new(base_dir)
         .min_depth(2)
         .max_depth(2)
@@ -131,7 +135,7 @@ fn process_xml_files(base_dir: &Path, output_dir: &Path) -> Result<()> {
     }
 
     files.par_iter().for_each(|file| {
-        match expand_includes(file) {
+        match expand_includes(file, true) {
             Ok(expanded) => {
                 let out_path = output_dir.join(file.file_name().unwrap());
                 if let Err(err) = fs::write(&out_path, expanded) {

@@ -1,0 +1,38 @@
+<patches>
+    <!--
+    Pretty much a complete wolf overhaul
+    ( Grab changes are handled in a separate XML )
+    Human Form
+        / Titan Stance on V
+        / Grab moved to X
+        / Full rotation on T/G
+        / Block copied to LMB
+        / Warcry on block B
+    Wolf
+        - Break only available on open breaker bar
+        - Break copied to X
+    Titan
+        / Mixed rotation on RMB
+        ? Surge on LMB
+        X Extend on V
+        / Grab on X
+        / Wolf available in titan stance
+    -->
+    <patch file="skill3_contextscriptdata_kungfufighter_contextsimplemode_g3.xml">
+        <!-- Remove Human + Wolf -->
+        <select-nodes query="//stance[@stance='단타']">
+            <remove-children />
+            <append-buffer>
+                <!-- #include file="Wolf\단타.xml" -->
+            </append-buffer>
+        </select-nodes>
+
+        <!-- Remove Titan Stance -->
+        <select-nodes query="//stance[@stance='연계']">
+            <remove-children/>
+            <append-buffer>
+                <!-- #include file="Wolf\연계.xml" -->
+            </append-buffer>
+        </select-nodes>
+    </patch>
+</patches>

@@ -23,9 +23,8 @@
         <select-nodes query="//stance[@stance='유권']">
             <remove-children/>
             <append-buffer>
-                
-<![CDATA[
-
+                <![CDATA[
+ 
 ]]>
             </append-buffer>
         </select-nodes>
