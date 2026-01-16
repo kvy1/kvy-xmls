@@ -1,0 +1,13 @@
+<patches>
+    <patch file="skill3_contextscriptdata_assassin*.xml">
+        <select-nodes query="/table/contextscript/stance">
+            <select-node query="./layer">
+                <insert-sibling-before name="layer">
+                    <append-buffer>
+                        <!-- #include file="All\Stun.xml" -->
+                    </append-buffer>
+                </insert-sibling-before>
+            </select-node>
+        </select-nodes>
+    </patch>
+</patches>
